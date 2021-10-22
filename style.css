@@ -5,3 +5,12 @@ body {
 .container {
     margin:0px
 }
+
+img {
+    width:500px;
+    height:auto;
+}
+
+.info {
+    padding-top: 30px;
+}

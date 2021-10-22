@@ -60,7 +60,7 @@ const svg = d3.select('.population-plot').append("svg")
         var yScale = d3.scaleBand()
         .range ([0, height-30])
         .domain(data.map(d=>d.building))
-        .padding(0.1),
+        .padding(0.01),
 
         xScale = d3.scaleLinear()
         .range ([width, 0])
@@ -75,7 +75,7 @@ const svg = d3.select('.population-plot').append("svg")
         .attr('y', d=> yScale(d.building))
         .attr('width', d=> d.height_px)
         .attr('height', yScale.bandwidth()-10)
-        .attr('fill', '#69a3b2')
+        .attr('fill', 'orange')
         .attr('class', 'bar')
         .on("click", (event,d) => {// event is passed first from D3
 
@@ -84,7 +84,8 @@ const svg = d3.select('.population-plot').append("svg")
             d3.select('.country').text(d.country);
             d3.select('.floors').text(d.floors);
             d3.select('.completed').text(d.completed);
-            d3.select(".image").attr("src", "../assets/" + d.image);
+            d3.select('.name').text(d.building);
+            d3.select(".image").attr("src", "assets/" + d.image);
           });
 
         svg_2.selectAll('.text')
